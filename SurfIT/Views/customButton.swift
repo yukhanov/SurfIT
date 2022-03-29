@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EnterNumberButton: UIButton {
+class customButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +26,7 @@ class EnterNumberButton: UIButton {
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         titleLabel?.numberOfLines = 1
         layer.borderWidth = 1
+        layer.cornerRadius = 10
 
         titleEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         

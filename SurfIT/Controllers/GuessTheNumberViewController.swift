@@ -14,7 +14,7 @@ class GuessTheNumberViewController: UIViewController {
     
     private let roundLabel = MainLabel()
     private let numberTextField = NumberTextField()
-    private let enterNumberButton = EnterNumberButton()
+    private let enterNumberButton = customButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,12 @@ class GuessTheNumberViewController: UIViewController {
     
     @objc func enterButtonTapped() {
         if let text = numberTextField.text {
-            guard let number = Decimal(string: text.filter { $0.isWholeNumber }) else { return }
+            guard let number = Int(text.filter { $0.isWholeNumber }) else { return }
             print(number)
+            
+            let computerResultVC = ComputersResultViewController()
+            computerResultVC.number = number
+            self.present(computerResultVC, animated: true, completion: nil)
                                  
         }
     }
