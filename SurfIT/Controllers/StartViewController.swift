@@ -33,7 +33,7 @@ class StartViewController: UIViewController {
     
     @objc func showGuessTheNumberVC() {
         let guessVC = GuessTheNumberViewController()
-        self.present(guessVC, animated: true, completion: nil)
+        self.navigationController?.show(guessVC, sender: nil)
        }
 
 

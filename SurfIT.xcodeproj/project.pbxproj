@@ -15,7 +15,8 @@
 		000CBC5F27F302D900C23697 /* MainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC5E27F302D900C23697 /* MainLabel.swift */; };
 		000CBC6127F305D600C23697 /* StartNewGameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6027F305D600C23697 /* StartNewGameButton.swift */; };
 		000CBC6327F3086A00C23697 /* GuessTheNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6227F3086A00C23697 /* GuessTheNumberViewController.swift */; };
-		000CBC6527F3113600C23697 /* EnterTheNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6427F3113600C23697 /* EnterTheNumberTextField.swift */; };
+		000CBC6527F3113600C23697 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6427F3113600C23697 /* NumberTextField.swift */; };
+		000CBC6727F3224500C23697 /* EnterNumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6627F3224500C23697 /* EnterNumberButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		000CBC5E27F302D900C23697 /* MainLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLabel.swift; sourceTree = "<group>"; };
 		000CBC6027F305D600C23697 /* StartNewGameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameButton.swift; sourceTree = "<group>"; };
 		000CBC6227F3086A00C23697 /* GuessTheNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheNumberViewController.swift; sourceTree = "<group>"; };
-		000CBC6427F3113600C23697 /* EnterTheNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTheNumberTextField.swift; sourceTree = "<group>"; };
+		000CBC6427F3113600C23697 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
+		000CBC6627F3224500C23697 /* EnterNumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNumberButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,6 @@
 			children = (
 				000CBC5927F300BB00C23697 /* Views */,
 				000CBC5827F300B200C23697 /* Models */,
-				000CBC4427F3003100C23697 /* AppDelegate.swift */,
 				000CBC5D27F3020F00C23697 /* Controllers */,
 				000CBC5C27F3014000C23697 /* Resources */,
 			);
@@ -83,7 +84,8 @@
 			children = (
 				000CBC5E27F302D900C23697 /* MainLabel.swift */,
 				000CBC6027F305D600C23697 /* StartNewGameButton.swift */,
-				000CBC6427F3113600C23697 /* EnterTheNumberTextField.swift */,
+				000CBC6427F3113600C23697 /* NumberTextField.swift */,
+				000CBC6627F3224500C23697 /* EnterNumberButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,6 +93,7 @@
 		000CBC5C27F3014000C23697 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				000CBC4427F3003100C23697 /* AppDelegate.swift */,
 				000CBC4627F3003100C23697 /* SceneDelegate.swift */,
 				000CBC4D27F3003300C23697 /* Assets.xcassets */,
 				000CBC4F27F3003300C23697 /* LaunchScreen.storyboard */,
@@ -180,9 +183,10 @@
 			files = (
 				000CBC4927F3003100C23697 /* StartViewController.swift in Sources */,
 				000CBC4527F3003100C23697 /* AppDelegate.swift in Sources */,
-				000CBC6527F3113600C23697 /* EnterTheNumberTextField.swift in Sources */,
+				000CBC6527F3113600C23697 /* NumberTextField.swift in Sources */,
 				000CBC6127F305D600C23697 /* StartNewGameButton.swift in Sources */,
 				000CBC6327F3086A00C23697 /* GuessTheNumberViewController.swift in Sources */,
+				000CBC6727F3224500C23697 /* EnterNumberButton.swift in Sources */,
 				000CBC4727F3003100C23697 /* SceneDelegate.swift in Sources */,
 				000CBC5F27F302D900C23697 /* MainLabel.swift in Sources */,
 			);
