@@ -21,10 +21,11 @@ class StartNewGameButton: UIButton {
     
     private func configure() {
         setTitle("Start New Game", for: .normal)
-        backgroundColor = .white
-        setTitleColor(.black, for: .normal)
+        backgroundColor = .systemBlue
+        setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         titleLabel?.numberOfLines = 1
+        layer.cornerRadius = 20
  
         
         

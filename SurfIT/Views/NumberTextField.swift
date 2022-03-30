@@ -30,7 +30,6 @@ class NumberTextField: UITextField {
                                         width: 15,
                                         height: self.frame.height))
         
-        
         leftViewMode = .always
         placeholder = "Guess the number"
         keyboardType = .numberPad

@@ -11,10 +11,12 @@ class GuessTheNumberViewController: UIViewController {
     
     
     var guessingNumber: String = "0"
+    var numbersModel = NumbersModel(computersNumber: 0, myNumber: 0, myNumberEnterred: 0, computerNumberEnterred: 0)
+   
     
     private let roundLabel = MainLabel()
     private let numberTextField = NumberTextField()
-    private let enterNumberButton = customButton()
+    private let enterNumberButton = CustomButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +43,10 @@ class GuessTheNumberViewController: UIViewController {
             guard let number = Int(text.filter { $0.isWholeNumber }) else { return }
             print(number)
             
-            let computerResultVC = ComputersResultViewController()
-            computerResultVC.number = number
-            self.present(computerResultVC, animated: true, completion: nil)
+            let gamersResultVC = GamersResultViewController()
+            let computersResultVC = ComputersResultViewController()
+            computersResultVC.guessingNumber = number
+            self.present(gamersResultVC, animated: true, completion: nil)
                                  
         }
     }

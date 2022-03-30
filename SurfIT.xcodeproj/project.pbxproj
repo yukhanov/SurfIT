@@ -16,9 +16,12 @@
 		000CBC6127F305D600C23697 /* StartNewGameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6027F305D600C23697 /* StartNewGameButton.swift */; };
 		000CBC6327F3086A00C23697 /* GuessTheNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6227F3086A00C23697 /* GuessTheNumberViewController.swift */; };
 		000CBC6527F3113600C23697 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6427F3113600C23697 /* NumberTextField.swift */; };
-		000CBC6727F3224500C23697 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6627F3224500C23697 /* customButton.swift */; };
+		000CBC6727F3224500C23697 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6627F3224500C23697 /* CustomButton.swift */; };
 		000CBC6927F32F9B00C23697 /* ComputersResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6827F32F9B00C23697 /* ComputersResultViewController.swift */; };
 		000CBC6C27F336DC00C23697 /* ExtensionUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6B27F336DC00C23697 /* ExtensionUIStackView.swift */; };
+		000CBC6E27F37E5100C23697 /* NumbersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6D27F37E5100C23697 /* NumbersModel.swift */; };
+		000CBC7027F415FF00C23697 /* GamersResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC6F27F415FF00C23697 /* GamersResultViewController.swift */; };
+		000CBC7227F4580200C23697 /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CBC7127F4580200C23697 /* BinarySearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +36,12 @@
 		000CBC6027F305D600C23697 /* StartNewGameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameButton.swift; sourceTree = "<group>"; };
 		000CBC6227F3086A00C23697 /* GuessTheNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheNumberViewController.swift; sourceTree = "<group>"; };
 		000CBC6427F3113600C23697 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
-		000CBC6627F3224500C23697 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
+		000CBC6627F3224500C23697 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		000CBC6827F32F9B00C23697 /* ComputersResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputersResultViewController.swift; sourceTree = "<group>"; };
 		000CBC6B27F336DC00C23697 /* ExtensionUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIStackView.swift; sourceTree = "<group>"; };
+		000CBC6D27F37E5100C23697 /* NumbersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersModel.swift; sourceTree = "<group>"; };
+		000CBC6F27F415FF00C23697 /* GamersResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamersResultViewController.swift; sourceTree = "<group>"; };
+		000CBC7127F4580200C23697 /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 				000CBC5827F300B200C23697 /* Models */,
 				000CBC5D27F3020F00C23697 /* Controllers */,
 				000CBC5C27F3014000C23697 /* Resources */,
+				000CBC7127F4580200C23697 /* BinarySearch.swift */,
 			);
 			path = SurfIT;
 			sourceTree = "<group>";
@@ -80,6 +87,7 @@
 		000CBC5827F300B200C23697 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				000CBC6D27F37E5100C23697 /* NumbersModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -90,7 +98,7 @@
 				000CBC5E27F302D900C23697 /* MainLabel.swift */,
 				000CBC6027F305D600C23697 /* StartNewGameButton.swift */,
 				000CBC6427F3113600C23697 /* NumberTextField.swift */,
-				000CBC6627F3224500C23697 /* customButton.swift */,
+				000CBC6627F3224500C23697 /* CustomButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 				000CBC4827F3003100C23697 /* StartViewController.swift */,
 				000CBC6227F3086A00C23697 /* GuessTheNumberViewController.swift */,
 				000CBC6827F32F9B00C23697 /* ComputersResultViewController.swift */,
+				000CBC6F27F415FF00C23697 /* GamersResultViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,13 +205,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				000CBC4927F3003100C23697 /* StartViewController.swift in Sources */,
+				000CBC7227F4580200C23697 /* BinarySearch.swift in Sources */,
 				000CBC6C27F336DC00C23697 /* ExtensionUIStackView.swift in Sources */,
 				000CBC4527F3003100C23697 /* AppDelegate.swift in Sources */,
 				000CBC6527F3113600C23697 /* NumberTextField.swift in Sources */,
+				000CBC7027F415FF00C23697 /* GamersResultViewController.swift in Sources */,
 				000CBC6927F32F9B00C23697 /* ComputersResultViewController.swift in Sources */,
 				000CBC6127F305D600C23697 /* StartNewGameButton.swift in Sources */,
 				000CBC6327F3086A00C23697 /* GuessTheNumberViewController.swift in Sources */,
-				000CBC6727F3224500C23697 /* customButton.swift in Sources */,
+				000CBC6727F3224500C23697 /* CustomButton.swift in Sources */,
+				000CBC6E27F37E5100C23697 /* NumbersModel.swift in Sources */,
 				000CBC4727F3003100C23697 /* SceneDelegate.swift in Sources */,
 				000CBC5F27F302D900C23697 /* MainLabel.swift in Sources */,
 			);

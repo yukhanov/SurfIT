@@ -9,14 +9,20 @@ import UIKit
 
 class ComputersResultViewController: UIViewController {
     
-    var number = 0
+    var guessingNumber = 0
+    
+    var numberModel = NumbersModel(computersNumber: 0, myNumber: 0, myNumberEnterred: 0, computerNumberEnterred: 0)
+    //private let binarySearch = BinarySearch(mainArray: Array(1...100), newArray: [])
+    var mainArray = Array(0...100)
+    var newArray = [Int]()
+    var target = 0
     
     private let roundLabel = MainLabel()
     private let whoseGuessesLabel = MainLabel()
     private let guessesLabel = MainLabel()
-    private let lessButton = customButton()
-    private let equalButton = customButton()
-    private let moreButton = customButton()
+    private let lessButton = CustomButton()
+    private let equalButton = CustomButton()
+    private let moreButton = CustomButton()
     
     private lazy var buttonsStackView = UIStackView(arrangedSubviews: [lessButton, equalButton, moreButton], axis: .horizontal, spacing: 10)
     
@@ -27,21 +33,28 @@ class ComputersResultViewController: UIViewController {
 
         
         view.backgroundColor = .white
-        print(number)
+
+    
+        print(guessingNumber)
+        
+        findNumber()
         setupViews()
         setConstraints()
         
         // Do any additional setup after loading the view.
     }
     
+    
+    
     private func setupViews() {
         lessButton.setTitle(">", for: .normal)
         equalButton.setTitle("=", for: .normal)
         moreButton.setTitle("<", for: .normal)
-        //view.addSubview(buttonsStackView)
+        
+        lessButton.addTarget(self, action: #selector(lessButtonTapped), for: .touchUpInside)
         roundLabel.text = "Round №"
         whoseGuessesLabel.text = "computer guesses"
-        guessesLabel.text = "number is - \(calculateRandomNumber())"
+        guessesLabel.text = "number is - \(target)"
         buttonsStackView.distribution = .fillEqually
         view.addSubview(roundLabel)
         view.addSubview(whoseGuessesLabel)
@@ -50,11 +63,33 @@ class ComputersResultViewController: UIViewController {
         
     }
     
-    private func calculateRandomNumber() -> Int {
-        let randomNumber = Int.random(in: 0...100) //по условию ТЗ 0...Int.max
-        return randomNumber
+    @objc func lessButtonTapped() {
+        findNumber()
+
+
     }
     
+    func findNumber() {
+        target = mainArray.count / 2
+        print(target)
+        binarySearch(array: mainArray, target: target)
+        print(mainArray)
+        guessesLabel.text = "number is - \(target)"
+    }
+    
+
+    func binarySearch(array: [Int], target: Int) {
+
+         for i in 1...(array.count - 1) {
+             if target > array[i] {
+                 newArray = Array(1...array[i + 1])
+                 mainArray = newArray
+                 
+             } else {
+                 
+             }
+         }
+     }
 
     /*
     // MARK: - Navigation
