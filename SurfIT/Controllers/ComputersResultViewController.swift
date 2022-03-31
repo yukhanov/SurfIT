@@ -51,10 +51,12 @@ class ComputersResultViewController: UIViewController {
         moreButton.setTitle("<", for: .normal)
         
         lessButton.addTarget(self, action: #selector(lessButtonTapped), for: .touchUpInside)
+        
         moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
+        counter = 1
         roundLabel.text = "Round № \(counter)"
         whoseGuessesLabel.text = "computer guesses"
-        mid = min + max / 2
+        mid = (min + max) / 2
         guessesLabel.text = "number is - \(mid)?"
         buttonsStackView.distribution = .fillEqually
         view.addSubview(roundLabel)
@@ -65,34 +67,32 @@ class ComputersResultViewController: UIViewController {
     }
     
     @objc func lessButtonTapped() {
-        lessFindNumber()
-    }
-    
-    @objc func moreButtonTapped() {
         moreFindNumber()
     }
     
+    @objc func moreButtonTapped() {
+        lessFindNumber()
+    }
+    
     func lessFindNumber() {
-        if guessedNumber > mid {
-            mid = mid + max / 2
-            print(mid)
-            guessesLabel.text = "number is - \(mid)"
+        if guessedNumber < mid {
+            max = mid
+            mid = (min + max) / 2
             counter += 1
+
+            guessesLabel.text = "number is - \(mid)?"
             roundLabel.text = "Round № \(counter)"
-        } else {
-            print("my number is less")
         }
     }
     
     func moreFindNumber() {
-        if guessedNumber < mid {
-            mid = mid + min / 2
+        if guessedNumber > mid {
+            min = mid
+            mid = (min + max) / 2
             print(mid)
-            guessesLabel.text = "number is - \(mid)"
+            guessesLabel.text = "number is - \(mid)?"
             counter += 1
             roundLabel.text = "Round № \(counter)"
-        } else {
-            print("my number is more")
         }
     }
     
