@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GuessTheNumberViewController: UIViewController {
+class GuessTheNumberViewController: UIViewController, UITextFieldDelegate {
     
     
     var guessingNumber: String = "0"
@@ -43,10 +43,10 @@ class GuessTheNumberViewController: UIViewController {
             guard let number = Int(text.filter { $0.isWholeNumber }) else { return }
             print(number)
             
-            let gamersResultVC = GamersResultViewController()
+           
             let computersResultVC = ComputersResultViewController()
-            computersResultVC.guessingNumber = number
-            self.present(gamersResultVC, animated: true, completion: nil)
+            computersResultVC.guessedNumber = number
+            self.present(computersResultVC, animated: true, completion: nil)
                                  
         }
     }

@@ -9,13 +9,15 @@ import UIKit
 
 class ComputersResultViewController: UIViewController {
     
-    var guessingNumber = 0
+    var guessedNumber = 0
     
     var numberModel = NumbersModel(computersNumber: 0, myNumber: 0, myNumberEnterred: 0, computerNumberEnterred: 0)
-    //private let binarySearch = BinarySearch(mainArray: Array(1...100), newArray: [])
-    var mainArray = Array(0...100)
-    var newArray = [Int]()
-    var target = 0
+
+    
+    var min = 0
+    var max = 100
+    var mid = 0
+    var counter = 1
     
     private let roundLabel = MainLabel()
     private let whoseGuessesLabel = MainLabel()
@@ -35,9 +37,10 @@ class ComputersResultViewController: UIViewController {
         view.backgroundColor = .white
 
     
-        print(guessingNumber)
+        print(guessedNumber)
         
-        findNumber()
+        
+        
         setupViews()
         setConstraints()
         
@@ -52,9 +55,10 @@ class ComputersResultViewController: UIViewController {
         moreButton.setTitle("<", for: .normal)
         
         lessButton.addTarget(self, action: #selector(lessButtonTapped), for: .touchUpInside)
-        roundLabel.text = "Round №"
+        moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
+        roundLabel.text = "Round № \(counter)"
         whoseGuessesLabel.text = "computer guesses"
-        guessesLabel.text = "number is - \(target)"
+        guessesLabel.text = "number is - \(mid)"
         buttonsStackView.distribution = .fillEqually
         view.addSubview(roundLabel)
         view.addSubview(whoseGuessesLabel)
@@ -64,32 +68,61 @@ class ComputersResultViewController: UIViewController {
     }
     
     @objc func lessButtonTapped() {
-        findNumber()
-
-
+        lessFindNumber()
     }
     
-    func findNumber() {
-        target = mainArray.count / 2
-        print(target)
-        binarySearch(array: mainArray, target: target)
-        print(mainArray)
-        guessesLabel.text = "number is - \(target)"
+    @objc func moreButtonTapped() {
+        moreFindNumber()
     }
     
-
-    func binarySearch(array: [Int], target: Int) {
-
-         for i in 1...(array.count - 1) {
-             if target > array[i] {
-                 newArray = Array(1...array[i + 1])
-                 mainArray = newArray
-                 
-             } else {
-                 
-             }
-         }
-     }
+    func lessFindNumber() {
+        if guessedNumber > mid {
+            mid = mid + max / 2
+            print(mid)
+            guessesLabel.text = "number is - \(mid)"
+            counter += 1
+            roundLabel.text = "Round № \(counter)"
+        } else {
+            print("my number is less")
+        }
+    }
+    
+    func moreFindNumber() {
+        if guessedNumber < mid {
+            mid = mid + min / 2
+            print(mid)
+            guessesLabel.text = "number is - \(mid)"
+            counter += 1
+            roundLabel.text = "Round № \(counter)"
+        } else {
+            print("my number is more")
+        }
+    }
+    
+    
+//
+//    func findNumber() {
+//        target = mainArray.count / 2
+//        binarySearch(array: mainArray, target: target)
+//        guessesLabel.text = "number is - \(target)"
+//        counter += 1
+//        roundLabel.text = "Round № \(counter)"
+//
+//    }
+//
+//
+//    func binarySearch(array: [Int], target: Int) {
+//
+//         for i in 1...(array.count - 1) {
+//             if target > array[i] {
+//                 newArray = Array(1...array[i + 1])
+//                 mainArray = newArray
+//
+//             } else if target == mainArray.count {
+//                 print("Computers win")
+//             }
+//         }
+//     }
 
     /*
     // MARK: - Navigation
@@ -117,7 +150,7 @@ extension ComputersResultViewController {
             guessesLabel.topAnchor.constraint(equalTo: whoseGuessesLabel.bottomAnchor, constant: 100),
             guessesLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             //
-            buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150),
+            buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
             buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
             buttonsStackView.heightAnchor.constraint(equalToConstant: 40)
