@@ -25,7 +25,7 @@ class StartNewGameButton: UIButton {
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         titleLabel?.numberOfLines = 1
-        layer.cornerRadius = 20
+        layer.cornerRadius = 10
  
         
         

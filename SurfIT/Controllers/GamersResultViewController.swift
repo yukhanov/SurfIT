@@ -20,11 +20,11 @@ class GamersResultViewController: UIViewController {
         
         setupViews()
         setConstraints()
-
+        
         view.backgroundColor = .systemBlue
     }
     
-
+    
     private func setupViews() {
         enterNumberButton.addTarget(self, action: #selector(enterButtonTapped), for: .touchUpInside)
         view.addSubview(gamersResultTextField)
@@ -39,19 +39,19 @@ class GamersResultViewController: UIViewController {
             let computersResultVC = ComputersResultViewController()
             computersResultVC.numberModel.myNumber = number
             self.present(computersResultVC, animated: true, completion: nil)
-                                 
+            
         }
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension GamersResultViewController {

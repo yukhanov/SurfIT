@@ -12,7 +12,7 @@ class ComputersResultViewController: UIViewController {
     var guessedNumber = 0
     
     var numberModel = NumbersModel(computersNumber: 0, myNumber: 0, myNumberEnterred: 0, computerNumberEnterred: 0)
-
+    
     
     var min = 0
     var max = 100
@@ -29,17 +29,13 @@ class ComputersResultViewController: UIViewController {
     private lazy var buttonsStackView = UIStackView(arrangedSubviews: [lessButton, equalButton, moreButton], axis: .horizontal, spacing: 10)
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         view.backgroundColor = .white
-
-    
+        
         print(guessedNumber)
-        
-        
         
         setupViews()
         setConstraints()
@@ -58,7 +54,8 @@ class ComputersResultViewController: UIViewController {
         moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
         roundLabel.text = "Round № \(counter)"
         whoseGuessesLabel.text = "computer guesses"
-        guessesLabel.text = "number is - \(mid)"
+        mid = min + max / 2
+        guessesLabel.text = "number is - \(mid)?"
         buttonsStackView.distribution = .fillEqually
         view.addSubview(roundLabel)
         view.addSubview(whoseGuessesLabel)
@@ -100,40 +97,40 @@ class ComputersResultViewController: UIViewController {
     }
     
     
-//
-//    func findNumber() {
-//        target = mainArray.count / 2
-//        binarySearch(array: mainArray, target: target)
-//        guessesLabel.text = "number is - \(target)"
-//        counter += 1
-//        roundLabel.text = "Round № \(counter)"
-//
-//    }
-//
-//
-//    func binarySearch(array: [Int], target: Int) {
-//
-//         for i in 1...(array.count - 1) {
-//             if target > array[i] {
-//                 newArray = Array(1...array[i + 1])
-//                 mainArray = newArray
-//
-//             } else if target == mainArray.count {
-//                 print("Computers win")
-//             }
-//         }
-//     }
-
+    //
+    //    func findNumber() {
+    //        target = mainArray.count / 2
+    //        binarySearch(array: mainArray, target: target)
+    //        guessesLabel.text = "number is - \(target)"
+    //        counter += 1
+    //        roundLabel.text = "Round № \(counter)"
+    //
+    //    }
+    //
+    //
+    //    func binarySearch(array: [Int], target: Int) {
+    //
+    //         for i in 1...(array.count - 1) {
+    //             if target > array[i] {
+    //                 newArray = Array(1...array[i + 1])
+    //                 mainArray = newArray
+    //
+    //             } else if target == mainArray.count {
+    //                 print("Computers win")
+    //             }
+    //         }
+    //     }
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension ComputersResultViewController {
@@ -154,7 +151,7 @@ extension ComputersResultViewController {
             buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
             buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
             buttonsStackView.heightAnchor.constraint(equalToConstant: 40)
-        
+            
         ])
     }
 }

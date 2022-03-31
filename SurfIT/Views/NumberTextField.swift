@@ -23,23 +23,27 @@ class NumberTextField: UITextField, UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let minValue = 1
-            let maxValue = 100
-            lazy var valuesRange = minValue...maxValue
+        let maxValue = 100
+        lazy var valuesRange = minValue...maxValue
         let newText = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
-            
-            if newText.isEmpty {
-              return true
-            }
-            
-            return valuesRange.contains(Int(newText) ?? minValue - 1)
-          }
+        
+        if newText.isEmpty {
+            return true
+        }
+        
+        return valuesRange.contains(Int(newText) ?? minValue - 1)
+    }
     
     
 
     
     private func configure() {
+
+        layer.cornerRadius = 20
         backgroundColor = .white
-        borderStyle = .line
+        borderStyle = .roundedRect
+        
+
         
         
         returnKeyType = .done
