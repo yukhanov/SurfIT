@@ -15,17 +15,13 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         view.backgroundColor = .white
         setViews()
         setConstraints()
-        
-        
-        
     }
     
     private func setViews() {
-        nameLabel.text = "gameName"
+        nameLabel.text = "My Awesome Game"
         startNewGameButton.addTarget(self, action: #selector(showGuessTheNumberVC), for: .touchUpInside)
         view.addSubview(nameLabel)
         view.addSubview(startNewGameButton)

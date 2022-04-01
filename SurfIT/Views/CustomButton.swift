@@ -27,13 +27,7 @@ class CustomButton: UIButton {
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         titleLabel?.numberOfLines = 1
         layer.cornerRadius = 10
-
         titleEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        
-        
-        
-        
-
         translatesAutoresizingMaskIntoConstraints = false
     }
 

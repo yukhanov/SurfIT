@@ -34,28 +34,19 @@ class NumberTextField: UITextField, UITextFieldDelegate {
         return valuesRange.contains(Int(newText) ?? minValue - 1)
     }
     
-    
-
-    
     private func configure() {
 
         layer.cornerRadius = 20
         backgroundColor = .white
         borderStyle = .roundedRect
-        
-
-        
-        
         returnKeyType = .done
         leftView = UIView(frame: CGRect(x: 0,
                                         y: 0,
                                         width: 15,
                                         height: self.frame.height))
-        
-        leftViewMode = .always
+        textAlignment = .center
         placeholder = "Guess the number"
         keyboardType = .numberPad
-       // tintColor = UIColor(red: 179, green: 178, blue: 179, alpha: 0)
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

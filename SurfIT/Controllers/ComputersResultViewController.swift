@@ -9,9 +9,7 @@ import UIKit
 
 class ComputersResultViewController: UIViewController {
     
-    var guessedNumber = 0
-    
-    var numberModel = NumbersModel(computersNumber: 0, myNumber: 0, myNumberEnterred: 0, computerNumberEnterred: 0)
+    var numberModel = NumbersModel()
     
     
     var min = 0
@@ -35,12 +33,11 @@ class ComputersResultViewController: UIViewController {
         
         view.backgroundColor = .white
         
-        print(guessedNumber)
+        print(numberModel.myNumber)
         
         setupViews()
         setConstraints()
         
-        // Do any additional setup after loading the view.
     }
     
     
@@ -51,7 +48,7 @@ class ComputersResultViewController: UIViewController {
         moreButton.setTitle("<", for: .normal)
         
         lessButton.addTarget(self, action: #selector(lessButtonTapped), for: .touchUpInside)
-        
+        equalButton.addTarget(self, action: #selector(equalButtonTapped), for: .touchUpInside)
         moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
         counter = 1
         roundLabel.text = "Round № \(counter)"
@@ -59,6 +56,8 @@ class ComputersResultViewController: UIViewController {
         mid = (min + max) / 2
         guessesLabel.text = "number is - \(mid)?"
         buttonsStackView.distribution = .fillEqually
+        
+        
         view.addSubview(roundLabel)
         view.addSubview(whoseGuessesLabel)
         view.addSubview(guessesLabel)
@@ -70,26 +69,35 @@ class ComputersResultViewController: UIViewController {
         moreFindNumber()
     }
     
+    @objc func equalButtonTapped() {
+        if numberModel.myNumber == mid {
+            equalButton.isEnabled = true
+            print("I'm enabled")
+            let gamersResultVC = GamersResultViewController()
+            gamersResultVC.compCounter = counter
+            present(gamersResultVC, animated: true, completion: nil)
+        }
+    }
+    
     @objc func moreButtonTapped() {
         lessFindNumber()
     }
     
     func lessFindNumber() {
-        if guessedNumber < mid {
+        if numberModel.myNumber < mid {
             max = mid
             mid = (min + max) / 2
             counter += 1
-
+            
             guessesLabel.text = "number is - \(mid)?"
             roundLabel.text = "Round № \(counter)"
         }
     }
     
     func moreFindNumber() {
-        if guessedNumber > mid {
+        if numberModel.myNumber > mid {
             min = mid
             mid = (min + max) / 2
-            print(mid)
             guessesLabel.text = "number is - \(mid)?"
             counter += 1
             roundLabel.text = "Round № \(counter)"
@@ -97,29 +105,6 @@ class ComputersResultViewController: UIViewController {
     }
     
     
-    //
-    //    func findNumber() {
-    //        target = mainArray.count / 2
-    //        binarySearch(array: mainArray, target: target)
-    //        guessesLabel.text = "number is - \(target)"
-    //        counter += 1
-    //        roundLabel.text = "Round № \(counter)"
-    //
-    //    }
-    //
-    //
-    //    func binarySearch(array: [Int], target: Int) {
-    //
-    //         for i in 1...(array.count - 1) {
-    //             if target > array[i] {
-    //                 newArray = Array(1...array[i + 1])
-    //                 mainArray = newArray
-    //
-    //             } else if target == mainArray.count {
-    //                 print("Computers win")
-    //             }
-    //         }
-    //     }
     
     /*
      // MARK: - Navigation
@@ -136,7 +121,7 @@ class ComputersResultViewController: UIViewController {
 extension ComputersResultViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            //Constraints to RoundLabel
+            //
             roundLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             roundLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             //

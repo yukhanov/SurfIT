@@ -8,9 +8,8 @@
 import Foundation
 
 struct NumbersModel {
-    var computersNumber: Int
-    var myNumber: Int
-    var myNumberEnterred: Int
-    var computerNumberEnterred: Int
+    var computersNumber: Int = Int.random(in: 1...100)
+    var myNumber: Int = 0
+    var myNumberEnterred: Int = 0 
 }
 
