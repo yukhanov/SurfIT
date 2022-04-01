@@ -1,5 +1,5 @@
 //
-//  StartNewGameButton.swift
+//  EnterNumberButton.swift
 //  SurfIT
 //
 //  Created by Сергей Юханов on 29.03.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartNewGameButton: UIButton {
+class CustomButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,12 +20,14 @@ class StartNewGameButton: UIButton {
     }
     
     private func configure() {
-        setTitle("Start New Game", for: .normal)
+        setTitle("Enter the number", for: .normal)
+        
         backgroundColor = .systemBlue
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         titleLabel?.numberOfLines = 1
         layer.cornerRadius = 10
+        titleEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         translatesAutoresizingMaskIntoConstraints = false
     }
 

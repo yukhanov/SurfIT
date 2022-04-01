@@ -21,7 +21,6 @@ class MainLabel: UILabel {
     private func configure() {
         textColor = .black
         font = UIFont.boldSystemFont(ofSize: 17)
-        
         translatesAutoresizingMaskIntoConstraints = false
     }
 
